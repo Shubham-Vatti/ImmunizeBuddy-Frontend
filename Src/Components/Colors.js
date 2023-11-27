@@ -1,0 +1,9 @@
+export const BlackColor='black';
+export const WhiteColor='white';
+export const LightBlueColor='rgb(128,170,199)'
+export const LightBlack='rgba(0,0,0,0.2)'
+export const LightWhite='rgba(0,0,0,0.06)'
+export const LightLightBlueColor='rgba(128,170,199,0.2)'
+export const LightBottomBlackColor='#00000080'
+export const LightPinkColor='#FF8AC1';
+export const LightFootBlueColor='#AEBDF4';
