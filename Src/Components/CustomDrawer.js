@@ -12,31 +12,17 @@ const CustomDrawer = ({ props, navigation }) => {
   return (
     <View style={{ flex: 1 }}>
 
-      <DrawerContentScrollView {...props}>
-        <View style={{ paddingHorizontal: width * 0.04 }}>
-          <View style={{flexDirection:'row',alignItems:'center',marginTop:width*0.06,justifyContent:'space-between',}}>
-            <Image source={require('../Assets/Logo.png')}
-              style={{
-                height: width * 0.13, width: width * 0.13,resizeMode:'contain'
-              }}
-            />
-            <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.closeDrawer())} style={{marginRight:width*0.04}}>
-              <Image
-                source={require('../Assets/close.png')}
-                style={{
-                  // height:20,width:20
-                  height:width*0.051,width:width*0.051                
-                }}
-                />
-            </TouchableOpacity>
-          </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingRight: 10 }}>
-            <View style={{ borderBottomColor: LightBlueColor, borderBottomWidth: 1, width: width * 0.1, marginTop: height * 0.06 }}>
-              <TouchableOpacity onPress={() => { }}>
+      <DrawerContentScrollView {...props} showsVerticalScrollIndicator={false}>
+        <View style={{flex:1,paddingHorizontal:width*0.04  }}>
+                {/* <Image
+                source={require('../Assets/181.jpg')}
+                style={{resizeMode:'repeat',width:width*0.66,height:width*0.3,borderTopRightRadius:width*0.04}}
+                /> */}
+            <View style={{ borderBottomColor: LightBlueColor,marginTop:width*0.1, borderBottomWidth: 1, width: width * 0.1 }}>
+              <TouchableOpacity onPress={() => {navigation.navigate('ProfileScreen') }}>
                 <Text style={{ color: BlackColor, fontFamily: 'Fredoka-Medium', width, fontSize: getFontSize(14), letterSpacing: 1 }}>Profile</Text>
               </TouchableOpacity>
             </View>
-          </View>
           <View style={{ borderBottomColor: LightBlueColor, borderBottomWidth: 1, width: width * 0.1, marginTop: height * 0.029 }}>
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
               <Text style={{ color: BlackColor, fontFamily: 'Fredoka-Medium', width, fontSize: getFontSize(14), letterSpacing: 1 }}>Home</Text>
@@ -47,11 +33,11 @@ const CustomDrawer = ({ props, navigation }) => {
               <Text style={{ color: BlackColor, fontFamily: 'Fredoka-Medium', width, fontSize: getFontSize(14), letterSpacing: 1 }}>Vaccine Details</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ borderBottomColor: LightBlueColor, borderBottomWidth: 1, width: width * 0.06, marginTop: height * 0.029 }}>
+          {/* <View style={{ borderBottomColor: LightBlueColor, borderBottomWidth: 1, width: width * 0.06, marginTop: height * 0.029 }}>
             <TouchableOpacity onPress={() => navigation.navigate('Store')}>
               <Text style={{ color: BlackColor, fontFamily: 'Fredoka-Medium', width, fontSize: getFontSize(14), letterSpacing: 1 }}>Store</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
           <View style={{ borderBottomColor: LightBlueColor, borderBottomWidth: 1, width: width * 0.14, marginTop: height * 0.029 }}>
             <TouchableOpacity onPress={() => navigation.navigate('Dr')}>
               <Text style={{ color: BlackColor, fontFamily: 'Fredoka-Medium', width, fontSize: getFontSize(14), letterSpacing: 1 }}>Doctor's</Text>
@@ -62,12 +48,12 @@ const CustomDrawer = ({ props, navigation }) => {
               <Text style={{ color: BlackColor, fontFamily: 'Fredoka-Medium', width, fontSize: getFontSize(14), letterSpacing: 1 }}>Setting</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={{ flexDirection:'row',alignItems:'center',marginTop:width*0.08}}
+          {/* <TouchableOpacity style={{ flexDirection:'row',alignItems:'center',marginTop:width*0.08}}
           onPress={()=>UserLogout()}
           >
           <Text style={{fontFamily:'Fredoka-Medium',color:'red',fontSize:getFontSize(16),marginRight:width*0.02}}>Log Out</Text>
           <AntDesign name="logout" size={width*0.05} color={'red'} />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           {/* <Image source={require('../Assets/Logo.png')}
             style={{
               height: width * 0.13, width: width * 0.13

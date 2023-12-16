@@ -19,6 +19,10 @@ import MedicineDetails from '../Screens/StoreScreen/MedicineDetails';
 import ForgotPasswordScreen from '../Screens/ProfileScreens/ForgotPasswordScreen'
 import RegisterUserScreen from '../Screens/ProfileScreens/RegisterUserScreen';
 import RegisterChildScreen from '../Screens/ProfileScreens/RegisterChildScreen';
+import ParentingTipsndArticles from '../Screens/ParentingTipsndArticles';
+import VaccineData from '../Screens/VaccineData';
+import UserProfileScreen from '../Screens/ProfileScreens/UserProfileScreen';
+import HomeScreen2 from '../Screens/HomeScreen2';
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
@@ -40,6 +44,10 @@ const AuthStack = () => {
       <Stack.Screen name='UserProductFogrotPass' component={ForgotPasswordScreen} />
       <Stack.Screen name='BottomNavigator' component={BottomTabNavigator}/>
       <Stack.Screen name='DrawerNavigation' component={DrawerStack}/>
+      <Stack.Screen name='ParentingData' component={ParentingTipsndArticles}/>
+      <Stack.Screen name='VaccineData' component={VaccineData}/>
+      <Stack.Screen name='ProfileScreen' component={UserProfileScreen}/>
+      <Stack.Screen name='NewHome' component={HomeScreen2}/>
     </Stack.Navigator>
   )
 }

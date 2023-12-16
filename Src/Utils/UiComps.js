@@ -77,12 +77,15 @@ export const LightBlueLine = () => {
 
 export const ScreenLogoHeader = ({navigation}) => {
     return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',paddingHorizontal:width*0.02  }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity
                 onPress={()=>{navigation.openDrawer()}}
                 >
-                    <Ionicons name="reorder-three-outline" size={width*0.09} color="black" />
+                    {/* <Ionicons name="reorder-three-outline" size={width*0.09} color="black" /> */}
+                    <Image source={require('../Assets/sort.png')}
+                    style={{width:width*0.06,height:width*0.06,resizeMode:'contain'}}                    
+                    />
                     {/* <AntDesign name="leftcircleo" size={width * 0.066} color="black" /> */}
                 </TouchableOpacity>
                 {/* <Text style={{ fontFamily: 'Fredoka-Medium', fontSize: getFontSize(15),color:BlackColor,marginLeft:width*0.02 }}>Back</Text> */}
@@ -98,7 +101,7 @@ export const ScreenLogoHeader = ({navigation}) => {
 
 export const AppLoadingScreen = () => {
     return (
-        <SafeAreaView style={{ backgroundColor: 'rgba(0,0,0,0.4)', alignItems: 'center', justifyContent: 'center', position: 'absolute', height, width }}>
+        <SafeAreaView style={{ backgroundColor: 'rgba(0,0,0,0.4)',zIndex:10, alignItems: 'center', justifyContent: 'center', position: 'absolute', height, width }}>
             <View style={{ backgroundColor: WhiteColor, flexDirection: 'row', alignItems: 'center', justifyContent: "center", width: width * 0.4, borderRadius: width * 0.02, elevation: 4, padding: width * 0.06 }}>
                 <ActivityIndicator color={LightBlueColor} size={width * 0.06} />
                 <Text style={{ color: BlackColor, fontSize: getFontSize(16), fontFamily: 'Fredoka-Medium', paddingLeft: width * 0.02 }}>Loading ...</Text>

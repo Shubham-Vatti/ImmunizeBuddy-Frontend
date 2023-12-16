@@ -1,5 +1,5 @@
 import { Dimensions, FlatList, Image, PixelRatio, StyleSheet, Text, TouchableOpacity, View, Animated, PermissionsAndroid } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 // import {Animated } from 'react-native-reanimated'
 // import Animated, { Easing, Value, interpolate, timing, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated'
@@ -38,19 +38,6 @@ const WelcomeScreen = ({ navigation }) => {
   //     // PermissionsAndroid.request('android.permission.ACCESS_FINE_LOCATION')
   //   }
   // }, [])
-
-  const GetCurrentSlide = async () => {
-    try {
-      await AsyncStorage.setItem('CurrentSlide', currentIndex.toString())
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  useEffect(() => {
-    GetCurrentSlide()
-  }, [currentIndex])
-
   const scrollX = useRef(new Animated.Value(0)).current
   const [currentIndex, setCurrentIndex] = useState(0)
   const onViewRef = React.useRef((viewableItems) => {
@@ -59,6 +46,7 @@ const WelcomeScreen = ({ navigation }) => {
   const SkipButton = () => {
     if (flatList1 != undefined && flatList1 != null) {
       flatList1.scrollToOffset({ animated: true, offset: width * (3) })
+      navigation.navigate('LoginScreen')
     }
   }
   const ClickedNext = () => {
@@ -71,6 +59,20 @@ const WelcomeScreen = ({ navigation }) => {
       flatList1.scrollToOffset({ animated: true, offset: width * (currentIndex - 1) })
     }
   }
+
+  const GetCurrentSlide = async () => {
+    try {
+      console.log('--asyncdata--',currentIndex.toString())
+      await AsyncStorage.setItem('CurrentSlide', currentIndex.toString())
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    GetCurrentSlide()
+  }, [currentIndex])
+
   return (
     <View style={{ flex: 1, backgroundColor: WhiteColor }}>
       {currentIndex != 0 ? <TouchableOpacity style={{ paddingHorizontal: width * 0.04, marginTop: height * 0.028, flexDirection: 'row', justifyContent: 'space-between', width: width * 0.166, zIndex: 2 }}

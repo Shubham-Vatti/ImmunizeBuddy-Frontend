@@ -70,4 +70,6 @@ export const VaccineSlide=[
 ]
 
 
-export const base_url='http://10.0.2.2:7500'
+export const Base_Url="https://immunizebuddy-backend-production.up.railway.app";
+
+// export const base_url='http://10.0.2.2:7500'

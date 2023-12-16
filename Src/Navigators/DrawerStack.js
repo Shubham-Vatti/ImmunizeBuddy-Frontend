@@ -10,6 +10,9 @@ import DoctorsScreen from '../Screens/DoctorsScreen'
 import StoreScreen from '../Screens/StoreScreen'
 import VaccineDetails from '../Screens/VaccineDetails'
 import MoreScreen from '../Screens/MoreScreen'
+import ParentingTipsandBlogs from '../Screens/ParentingTipsandBlogs'
+import TopTabNavigator from './TopTabNavigator'
+import DoctorDetails from '../Screens/DoctorDetails'
 const width = Dimensions.get('window').width
 // import {BlackColor, LightBlueColor} from '../Components/Colors'
 const height = Dimensions.get('window').height
@@ -23,6 +26,9 @@ const DrawerStack = ({ navigation }) => {
       <DrawerTab.Screen name='Store' component={StoreScreen} />
       <DrawerTab.Screen name='vaccinedata' component={VaccineDetails} />
       <DrawerTab.Screen name='Setting' component={MoreScreen} />
+      <DrawerTab.Screen name='ParentingTips' component={ParentingTipsandBlogs} />
+      <DrawerTab.Screen name='TopBar' component={TopTabNavigator} />
+      <DrawerTab.Screen name='Drdetails' component={DoctorDetails} />
       {/* <DrawerTab.Screen name='Home' component={HomeScreen}/> */}
     </DrawerTab.Navigator>
   )
