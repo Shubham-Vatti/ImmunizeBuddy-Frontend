@@ -5,7 +5,7 @@ import { WhiteColor } from '../Components/Colors'
 
 const data={
     id:1,
-    img:require('../Assets/s1.png'),
+    img:require('../Assets/s1sample.png'),
     title:'Welcome',
     description:"Welcome to ImmunzeBuddy, your baby's health companion!"
   }

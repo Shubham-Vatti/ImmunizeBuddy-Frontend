@@ -21,14 +21,14 @@ const DrawerTab = createDrawerNavigator()
 const DrawerStack = ({ navigation }) => {
   return (
     <DrawerTab.Navigator screenOptions={{ headerShown: false, drawerStyle: { backgroundColor: WhiteColor, width: width * 0.66, borderTopRightRadius: width * 0.04, borderBottomRightRadius: width * 0.04 } }} drawerContent={(props) => { return <CustomDrawer props={props} navigation={navigation} /> }}>
-      <DrawerTab.Screen name='Home' component={HomeScreen} />
+      {/* <DrawerTab.Screen name='Home' component={HomeScreen} />
       <DrawerTab.Screen name='Dr' component={DoctorsScreen} />
       <DrawerTab.Screen name='Store' component={StoreScreen} />
       <DrawerTab.Screen name='vaccinedata' component={VaccineDetails} />
-      <DrawerTab.Screen name='Setting' component={MoreScreen} />
-      <DrawerTab.Screen name='ParentingTips' component={ParentingTipsandBlogs} />
-      <DrawerTab.Screen name='TopBar' component={TopTabNavigator} />
-      <DrawerTab.Screen name='Drdetails' component={DoctorDetails} />
+      <DrawerTab.Screen name='Setting' component={MoreScreen} /> */}
+      {/* <DrawerTab.Screen name='ParentingTips' component={ParentingTipsandBlogs} /> */}
+      {/* <DrawerTab.Screen name='TopBar' component={TopTabNavigator} /> */}
+      {/* <DrawerTab.Screen name='Drdetails' component={DoctorDetails} /> */}
       {/* <DrawerTab.Screen name='Home' component={HomeScreen}/> */}
     </DrawerTab.Navigator>
   )

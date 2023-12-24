@@ -42,7 +42,7 @@ const HelpDesk = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: WhiteColor, paddingHorizontal: width * 0.04 }}>
             <View >
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: height * 0.05 }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: height * 0.024 }}>
                     <TouchableOpacity style={{ zIndex: 2 }}
                         onPress={() => navigation.goBack()}
                     >

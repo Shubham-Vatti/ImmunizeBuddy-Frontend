@@ -43,7 +43,7 @@ const LoginScreen = ({ navigation }) => {
             {
               if(result.user_data.is_childregistered)
               {
-                navigation.navigate('DrawerNavigation')
+                navigation.navigate('BottomNavigator')
               }
               else{
                 navigation.navigate('RegisterChildScreen')
@@ -72,13 +72,13 @@ const LoginScreen = ({ navigation }) => {
 
   const GsignIn = async () => {
     try {
-      // SetisLoading(true)
+        SetisLoading(true)
+        // SetisLoading(true)
       console.log("Inside TRY")
       await GoogleSignin.hasPlayServices();
       await GoogleSignin.signOut();
       const userInfo = await GoogleSignin.signIn();
       if (userInfo) {
-        SetisLoading(true)
         GoogleAuthSignin(userInfo.idToken)
         // var data=JSON.stringify({
         //   "idToken":userInfo.idToken
@@ -90,14 +90,18 @@ const LoginScreen = ({ navigation }) => {
       // SetisLoading(false)
       console.log("Inside Catch")
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        SetisLoading(false)
         // Seterrordisplay("Google Signin Cancelled Please Sign In Again")
         // setVisible(true)
         // user cancelled the login flow
       } else if (error.code === statusCodes.IN_PROGRESS) {
+        SetisLoading(false)
         console.log(error.code)
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        SetisLoading(false)
         console.log(error.code)
       } else {
+        SetisLoading(false)
         console.log('iNSIDE', error)
       }
     }

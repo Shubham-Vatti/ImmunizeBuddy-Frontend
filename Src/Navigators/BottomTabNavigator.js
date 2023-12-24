@@ -12,6 +12,7 @@ import VaccineDetails from '../Screens/VaccineDetails'
 const { width, height } = Dimensions.get('window')
 import { getFontSize } from '../Utils/UiComps'
 import { BlackColor, LightBlack, LightBlueColor, LightBottomBlackColor } from '../Components/Colors'
+import ParentingTipsandBlogs from '../Screens/ParentingTipsandBlogs';
 
 const BottomStack = createBottomTabNavigator();
 
@@ -36,10 +37,10 @@ const BottomTabNavigator = () => {
                     {
                         tabBarIcon: (tabinfo) => {
                             return (tabinfo.focused ? <Image
-                                source={require('../Assets/vaccinehover.png')}
+                                source={require('../Assets/doc.png')}
                                 style={{ height: width * 0.06, resizeMode: 'contain', width: width * 0.06 }}
                             /> : <Image
-                                source={require('../Assets/vaccine.png')}
+                                source={require('../Assets/docs.png')}
                                 style={{ height: width * 0.06, width: width * 0.06 }}
                             />)
                         },
@@ -55,10 +56,10 @@ const BottomTabNavigator = () => {
                     {
                         tabBarIcon: (tabinfo) => {
                             return (!tabinfo.focused ? <Image
-                                source={require('../Assets/Drico.png')}
+                                source={require('../Assets/drio.png')}
                                 style={{ height: width * 0.06, resizeMode: 'contain', width: width * 0.06 }}
                             /> : <Image
-                                source={require('../Assets/DricoHover.png')}
+                                source={require('../Assets/dri.png')}
                                 style={{ height: width * 0.06, width: width * 0.06 }}
                             />)
                         },
@@ -82,15 +83,15 @@ const BottomTabNavigator = () => {
                             )
                         }
                     } />
-            <BottomStack.Screen name='Store' component={StoreScreen}
+            <BottomStack.Screen name='Blogs' component={ParentingTipsandBlogs}
                 options={
                     {
                         tabBarIcon: (tabinfo) => {
                             return (tabinfo.focused ? <Image
-                                source={require('../Assets/carthover.png')}
+                                source={require('../Assets/blog.png')}
                                 style={{ height: width * 0.06, resizeMode: 'contain', width: width * 0.06 }}
                             /> : <Image
-                                source={require('../Assets/cart.png')}
+                                source={require('../Assets/blo.png')}
                                 style={{ height: width * 0.06, width: width * 0.06 }}
                             />)
                         },
@@ -105,11 +106,11 @@ const BottomTabNavigator = () => {
                     {
                         tabBarIcon: (tabinfo) => {
                             return (tabinfo.focused ? <Image
-                                source={require('../Assets/menuhover.png')}
-                                style={{ height: width * 0.06, resizeMode: 'contain', width: width * 0.06 }}
+                                source={require('../Assets/more.png')}
+                                style={{ height: width * 0.07, resizeMode: 'contain', width: width * 0.07 }}
                             /> : <Image
-                                source={require('../Assets/menu.png')}
-                                style={{ height: width * 0.06, width: width * 0.06 }}
+                                source={require('../Assets/mor.png')}
+                                style={{ height: width * 0.07, width: width * 0.07 }}
                             />)
                         },
                         // tabBarItemStyle:{backgroundColor:'red'},

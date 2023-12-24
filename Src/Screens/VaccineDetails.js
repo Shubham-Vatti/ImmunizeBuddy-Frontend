@@ -2,7 +2,7 @@ import { Dimensions, FlatList, Image, Pressable, StyleSheet, Text, TextInput, To
 import React, { useEffect, useState } from 'react'
 import { BlackColor, LightBlack, LightBlueColor, LightPinkColor, LightWhite, WhiteColor } from '../Components/Colors'
 const { width, height } = Dimensions.get('window')
-import { AppLoadingScreen, LightBlueLine, ScreenLogoHeader, getFontSize } from '../Utils/UiComps'
+import { AppLoadingScreen, LightBlueLine, ScreenLogoHeader, ScreenWithoutDrawerHeader, getFontSize } from '../Utils/UiComps'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import { Base_Url, VaccineSlide } from '../Utils/AppFeatures'
 
@@ -43,14 +43,16 @@ const VaccineDetails = ({navigation}) => {
     <View style={{ flex: 1, backgroundColor: WhiteColor }}>
       <View style={{ flex: 1, paddingHorizontal: width * 0.024, }}>
         <View style={{ paddingVertical: height * 0.02}}>
-        <ScreenLogoHeader navigation={navigation}/>
+        {/* <ScreenLogoHeader navigation={navigation}/>
+         */}
+         <ScreenWithoutDrawerHeader navigation={navigation}/>
         </View>
         <LightBlueLine/>
         {/* <View style={{ backgroundColor: LightWhite, borderColor: LightBlack, width: width * 0.94, flexDirection: 'row', alignItems: 'center', paddingHorizontal: width * 0.014, borderWidth: 1, borderRadius: 10, alignSelf: 'center', marginTop: width * 0.04 }}>
           <Fontisto name="injection-syringe" size={24} color="black" />
           <TextInput placeholder='Serach vaccines ...' style={{ width: width * 0.82, paddingHorizontal: width * 0.014, fontFamily: 'Fredoka-Regular', color: BlackColor, fontSize: getFontSize(14) }} />
         </View> */}
-        <View style={{ flex: 1, paddingVertical: width * 0.02 }}>
+        <View style={{ flex: 1 }}>
           <FlatList
             data={VaccineSlide}
             showsVerticalScrollIndicator={false}

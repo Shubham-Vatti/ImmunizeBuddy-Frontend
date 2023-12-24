@@ -14,7 +14,7 @@ const VaccineData = ({ route, navigation }) => {
             style={{zIndex:4}}
             showsVerticalScrollIndicator={false}
             >
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: height * 0.05, }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: height * 0.03 }}>
                 <TouchableOpacity style={{ zIndex: 3 }}
                     onPress={() => navigation.goBack()}
                 >
@@ -25,7 +25,7 @@ const VaccineData = ({ route, navigation }) => {
                     <Text style={{ fontFamily: 'Fredoka-SemiBold', color: LightBlueColor, fontSize: getFontSize(24), textAlign: 'center' }}>Vaccine Details</Text>
                 </View>
             </View>
-            <View>
+            <View style={{paddingBottom:width*0.04}}>
                 <Text style={{ fontFamily: 'Fredoka-SemiBold', fontSize: getFontSize(16),marginTop:width*0.08, color: BlackColor }}>{vacciData.vaccine_name}</Text>
                 <Text style={{ fontFamily: 'Fredoka-Regular', fontSize: getFontSize(14), color: BlackColor,marginTop:width*0.02 }}>{vacciData.vaccine_details}</Text>
                 <Text style={{ fontFamily: 'Fredoka-SemiBold', fontSize: getFontSize(16),marginTop:width*0.04 }}>When to give vaccine :-</Text>

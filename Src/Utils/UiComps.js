@@ -5,6 +5,9 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import Animated from "react-native-reanimated";
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import auth, { firebase } from '@react-native-firebase/auth'
+import { ContextProvider } from "../Screens/StateManagment/ContextState";
+import { useContext, useEffect, useState } from "react";
+import { Base_Url } from "./AppFeatures";
 const fontScale = PixelRatio.getFontScale();
 export const getFontSize = size => size / fontScale;
 
@@ -75,16 +78,16 @@ export const LightBlueLine = () => {
     )
 }
 
-export const ScreenLogoHeader = ({navigation}) => {
+export const ScreenLogoHeader = ({ navigation }) => {
     return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',paddingHorizontal:width*0.02  }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: width * 0.02 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity
-                onPress={()=>{navigation.openDrawer()}}
+                    onPress={() => { navigation.openDrawer() }}
                 >
                     {/* <Ionicons name="reorder-three-outline" size={width*0.09} color="black" /> */}
                     <Image source={require('../Assets/sort.png')}
-                    style={{width:width*0.06,height:width*0.06,resizeMode:'contain'}}                    
+                        style={{ width: width * 0.06, height: width * 0.06, resizeMode: 'contain' }}
                     />
                     {/* <AntDesign name="leftcircleo" size={width * 0.066} color="black" /> */}
                 </TouchableOpacity>
@@ -98,10 +101,69 @@ export const ScreenLogoHeader = ({navigation}) => {
     )
 }
 
+export const ScreenLogoAndBackIcon=({navigation})=>{
+    
+    return (
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: width * 0.02 }}>
+            <TouchableOpacity onPress={()=>navigation.goBack()}>
+            <AntDesign name="leftcircleo" size={24} color="black" />
+            </TouchableOpacity>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require('../Assets/Logo.png')} style={{ width: width * 0.12, height: width * 0.12, resizeMode: 'contain' }} />
+                <Text style={{ color: LightBlueColor, fontFamily: 'Fredoka-Medium', marginLeft: width * 0.02, fontSize: getFontSize(14) }}>Immunize<Text style={{ color: LightPinkColor }}>Buddy</Text></Text>
+            </View>
+        </View>
+    )
+}
+export const ScreenWithoutDrawerHeader = ({navigation}) => {
+    const { AuthToken, SetAuthToken } = useContext(ContextProvider)  //Authtoken UseContext
+    const [parentdata,Setparentdata]=useState()
+    const GetUserData=async()=>{
+        try{
+          await fetch(`${Base_Url}/Parents-Api/Get-data`,{
+            method:"GET",
+            headers: { "Authorization": `Bearer ${AuthToken}` }
+          })
+          .then((res)=>res.json())
+          .then((result)=>{
+            if(result.type=="successfully get parents data")
+            {
+                console.log(result)
+              Setparentdata(result.parent_data)
+            //   getchildprofile()
+            }
+            console.log(result,AuthToken)
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
+        }
+        catch(err)
+        {
+          console.log(err)
+        }
+    }
+    useEffect(()=>{
+        GetUserData()
+    },[])
+    return (
+        <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require('../Assets/Logo.png')} style={{ width: width * 0.12, height: width * 0.12, resizeMode: 'contain' }} />
+                <Text style={{ color: LightBlueColor, fontFamily: 'Fredoka-Medium', marginLeft: width * 0.02, fontSize: getFontSize(14) }}>Immunize<Text style={{ color: LightPinkColor }}>Buddy</Text></Text>
+            </View>
+            {parentdata&&<TouchableOpacity
+            onPress={()=>navigation.navigate('ProfileScreen')}
+            >
+                <Image source={{uri:parentdata.profile_pic}} style={{width:width*0.13,height:width*0.13,borderRadius:100}}/>
+            </TouchableOpacity>}
+        </View>)
+}
+
 
 export const AppLoadingScreen = () => {
     return (
-        <SafeAreaView style={{ backgroundColor: 'rgba(0,0,0,0.4)',zIndex:10, alignItems: 'center', justifyContent: 'center', position: 'absolute', height, width }}>
+        <SafeAreaView style={{ backgroundColor: 'rgba(0,0,0,0.4)', zIndex: 10, alignItems: 'center', justifyContent: 'center', position: 'absolute', height, width }}>
             <View style={{ backgroundColor: WhiteColor, flexDirection: 'row', alignItems: 'center', justifyContent: "center", width: width * 0.4, borderRadius: width * 0.02, elevation: 4, padding: width * 0.06 }}>
                 <ActivityIndicator color={LightBlueColor} size={width * 0.06} />
                 <Text style={{ color: BlackColor, fontSize: getFontSize(16), fontFamily: 'Fredoka-Medium', paddingLeft: width * 0.02 }}>Loading ...</Text>

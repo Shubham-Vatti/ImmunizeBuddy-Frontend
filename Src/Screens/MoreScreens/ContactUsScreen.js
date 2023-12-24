@@ -1,4 +1,4 @@
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, Linking, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { BlackColor, LightBlueColor, WhiteColor } from '../../Components/Colors'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -9,7 +9,7 @@ import { UIBgKidFoot, getFontSize } from '../../Utils/UiComps'
 const ContactUsScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: WhiteColor, paddingHorizontal: width * 0.04 }}>
-            <View style={{flexDirection:'row',alignItems:'center', marginTop: height * 0.05,}}>
+            <View style={{flexDirection:'row',alignItems:'center', marginTop: height * 0.024,}}>
                 <TouchableOpacity style={{ zIndex: 3 }}
                     onPress={() => navigation.goBack()}
                 >
@@ -27,6 +27,7 @@ const ContactUsScreen = ({ navigation }) => {
                 <Text style={{ fontFamily: 'Fredoka-Regular', color: BlackColor, fontSize: getFontSize(15), textAlign: 'center' }}>If you have any questions, suggestions, or need assistance, don't hesitate to reach out to us. Your feedback is valuable in helping us improve and better serve you.</Text>
                 <Text style={{ color: BlackColor, marginTop: height * 0.02, fontFamily: 'Fredoka-Medium', textAlign: 'center', fontSize: getFontSize(14) }}>Thank you for choosing ImmunizeBuddy!</Text>
                 <Text style={{ fontFamily: 'Fredoka-Regular', marginTop: height * 0.01, color: BlackColor, fontSize: getFontSize(15), textAlign: 'center' }}>Your baby's health is our priority, and we're honored to be a part of your parenting experience. Together, we can ensure your little one gets the best start in life.</Text>
+                <Text style={{ fontFamily: 'Fredoka-Regular', marginTop: height * 0.01, color: BlackColor, fontSize: getFontSize(15), textAlign: 'center' }}>{'Mail us on :- '}<Text style={{fontFamily:"Fredoka-Medium"}} onPress={()=>{Linking.openURL(`mailto:immunizebuddy@gmail.com`)}}>immunizebuddy@gmail.com</Text></Text>
             </View>
             <UIBgKidFoot/>
         </View>

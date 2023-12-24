@@ -23,6 +23,8 @@ import ParentingTipsndArticles from '../Screens/ParentingTipsndArticles';
 import VaccineData from '../Screens/VaccineData';
 import UserProfileScreen from '../Screens/ProfileScreens/UserProfileScreen';
 import HomeScreen2 from '../Screens/HomeScreen2';
+import ParentingTipsandBlogs from '../Screens/ParentingTipsandBlogs';
+import DoctorDetails from '../Screens/DoctorDetails';
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
@@ -47,7 +49,9 @@ const AuthStack = () => {
       <Stack.Screen name='ParentingData' component={ParentingTipsndArticles}/>
       <Stack.Screen name='VaccineData' component={VaccineData}/>
       <Stack.Screen name='ProfileScreen' component={UserProfileScreen}/>
+      <Stack.Screen name='ParentingTipsStack' component={ParentingTipsandBlogs} />
       <Stack.Screen name='NewHome' component={HomeScreen2}/>
+      <Stack.Screen name='Drdetails' component={DoctorDetails} />
     </Stack.Navigator>
   )
 }

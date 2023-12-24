@@ -1,6 +1,6 @@
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
-import { BlackColor, LightBlack, LightBlueColor, WhiteColor } from '../Components/Colors'
+import React, { useContext, useState } from 'react'
+import { BlackColor, LightBlack, LightBlueColor, LightLightBlueColor, WhiteColor } from '../Components/Colors'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 const { width, height } = Dimensions.get('window')
 import AntDesign from 'react-native-vector-icons/AntDesign'
@@ -11,12 +11,16 @@ import { PERMISSIONS, RESULTS, check, request } from 'react-native-permissions'
 import { Modal } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import { Base_Url } from '../../Utils/AppFeatures'
+import { ContextProvider } from './StateManagment/ContextState'
 
 const HomeScreen2 = ({ navigation, route }) => {
     const [profilepicModal, setprofilepicModal] = useState(false)
     const [UserProfilePic, SetUserProfilePic] = useState('')
+    const { AuthToken, SetAuthToken } = useContext(ContextProvider)  //Authtoken UseContext
+    const { LoginID, SetLoginID } = useContext(ContextProvider)
+    const { UserEmailID, SEtUserEmailID } = useContext(ContextProvider)
     const { vaccinedata } = route.params;
-    console.log(vaccinedata)
+    // console.log(vaccinedata)
 
 
     let Options = {
@@ -27,6 +31,7 @@ const HomeScreen2 = ({ navigation, route }) => {
         quality: 0.8,
     }
     const OpenCamera = async () => {
+        // alert('aaa')
         check(PERMISSIONS.ANDROID.CAMERA)
             .then(async (result) => {
                 switch (result) {
@@ -91,6 +96,35 @@ const HomeScreen2 = ({ navigation, route }) => {
             // SetImage1(Result.assets[0])
         })
     }
+
+
+    const UpdateVaccineData=async()=>{
+        try{
+            var data=new FormData();
+            data.append('"pic',{
+                uri: UserProfilePic.uri,
+                type: UserProfilePic.type,
+                name: UserProfilePic.fileName,
+                fileName: 'image'
+              })
+              await fetch(`${Base_Url}/Approval-Reject/Update-Aprroval-rejection-data/?uid=${vaccinedata._id}&id=${LoginID}`,{
+                method:"POST",
+                headers: { "Authorization": `Bearer ${AuthToken}` },
+              })
+              .then((res)=>res.json())
+              .then((result)=>{
+                navigation.goBack()
+              })
+              .catch((err)=>{
+                console.log(err)
+              })
+        }
+        catch(err)
+        {
+            console.log(err)
+        }
+    }
+
     return (
         <View style={{ flex: 1, backgroundColor: WhiteColor, paddingHorizontal: width * 0.04 }}>
             <Modal
@@ -143,11 +177,18 @@ const HomeScreen2 = ({ navigation, route }) => {
                 <Text style={{ marginTop: width * 0.06, fontFamily: 'Fredoka-SemiBold', fontSize: 18 }}>Upload Your baby vaccination recipt : -</Text>
             </View>
             <Text style={{ fontFamily: 'Fredoka-Medium', fontSize: getFontSize(14), marginTop: width * 0.02 }}>{vaccinedata.Vaccine_name}</Text>
-            <TouchableOpacity style={{ backgroundColor: LightBlueColor, width: width * 0.4, paddingVertical: width * 0.02, borderRadius: 100, flexDirection: "row", height: width * 0.4, justifyContent: "center", alignSelf: 'center', marginTop: width * 0.2, alignItems: "center" }}
+            <TouchableOpacity style={{ backgroundColor: LightBlueColor, width: width * 0.5, paddingVertical: width * 0.02, borderRadius: 100, flexDirection: "row", height: width * 0.5, justifyContent: "center", alignSelf: 'center', marginTop: width * 0.2, alignItems: "center" }}
                 onPress={() =>OpenCamera()}
             >
+                {UserProfilePic?<Image source={{uri:UserProfilePic.uri}} style={{width: width * 0.5,height:width*0.5,borderRadius:100,resizeMode:"contain"}}/>:<View>
                 <Image source={require('../Assets/camera.png')} style={{ width: width * 0.06, height: width * 0.06, resizeMode: 'contain' }} />
                 <Text style={{ fontFamily: 'Fredoka-Medium', color: WhiteColor, fontSize: getFontSize(14), marginLeft: width * 0.01 }}>Upload</Text>
+                </View>}
+            </TouchableOpacity>
+            <TouchableOpacity style={{backgroundColor:LightLightBlueColor,borderColor:LightBlueColor,borderWidth:1,paddingVertical:width*0.02,width:width*0.4,borderRadius:width*0.01,alignItems:'center',alignSelf:'center',marginTop:width*0.1}}
+            onPress={()=>UpdateVaccineData()}
+            >
+                <Text style={{fontFamily:'Fredoka-Medium',fontSize:getFontSize(24)}}>Submit</Text>
             </TouchableOpacity>
         </View>
     )

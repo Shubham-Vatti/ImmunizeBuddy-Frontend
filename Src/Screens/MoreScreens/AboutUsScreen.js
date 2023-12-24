@@ -9,7 +9,7 @@ const { width, height } = Dimensions.get('window')
 const AboutUsScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: WhiteColor }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: height * 0.05, marginBottom: height * 0.02, paddingHorizontal: width * 0.04 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: height * 0.024, marginBottom: height * 0.02, paddingHorizontal: width * 0.04 }}>
                 <TouchableOpacity style={{}}
                     onPress={() => navigation.goBack()}
                 >

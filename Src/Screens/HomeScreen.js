@@ -2,7 +2,7 @@ import { Dimensions, FlatList, Image, Pressable, StyleSheet, Text, TouchableOpac
 import React, { useCallback, useContext, useState } from 'react'
 import { BlackColor, LightBlack, LightBlueColor, WhiteColor } from '../Components/Colors'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import { AppLoadingScreen, ScreenLogoHeader, getFontSize } from '../Utils/UiComps'
+import { AppLoadingScreen, LightBlueLine, ScreenLogoHeader, ScreenWithoutDrawerHeader, getFontSize } from '../Utils/UiComps'
 const { width, height } = Dimensions.get('window')
 import { useFocusEffect } from '@react-navigation/native';
 import { Base_Url } from '../Utils/AppFeatures'
@@ -50,8 +50,12 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: WhiteColor, width }}>
-      <View style={{ paddingVertical: height * 0.02, paddingHorizontal: width * 0.024 }}>
-        <ScreenLogoHeader navigation={navigation} />
+      <View style={{ paddingHorizontal: width * 0.024 }}>
+        {/* <ScreenLogoHeader navigation={navigation} /> */}
+        <View style={{ paddingVertical: height * 0.02}}>
+        <ScreenWithoutDrawerHeader navigation={navigation}/>
+        </View>
+        <LightBlueLine/>
       </View>
       <View style={{ flex: 1 }}>
         <FlatList

@@ -3,24 +3,25 @@ import React, { useState } from 'react'
 import { BlackColor, LightBlack, LightFootBlueColor, LightPinkColor, LightWhite, WhiteColor } from '../Components/Colors'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 const { width, height } = Dimensions.get('window')
-import { getFontSize,LightBlueLine, ScreenLogoHeader } from '../Utils/UiComps'
+import { getFontSize,LightBlueLine, ScreenLogoHeader, ScreenWithoutDrawerHeader } from '../Utils/UiComps'
 
 const MoreScreen = ({navigation}) => {
-  const [UserName, SetUserName] = useState('Shubham Kumar')
-  const [UserEmail, SetUserEmail] = useState('Shubhamvatti10@gmail.com')
+  // const [UserName, SetUserName] = useState('Shubham Kumar')
+  // const [UserEmail, SetUserEmail] = useState('Shubhamvatti10@gmail.com')
   return (
-    <View style={{ flex: 1,width, backgroundColor: WhiteColor, paddingHorizontal: width * 0.03, }}>
+    <View style={{ flex: 1,width, backgroundColor: WhiteColor, paddingHorizontal: width * 0.024, }}>
       <View style={{paddingVertical: height * 0.02}}>
-      <ScreenLogoHeader navigation={navigation}/>
+      {/* <ScreenLogoHeader navigation={navigation}/> */}
+      <ScreenWithoutDrawerHeader navigation={navigation}/>
       </View>
       <LightBlueLine/>
-      <TouchableOpacity style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginTop:height*0.03,paddingVertical:height*0.02}}
-      onPress={()=>navigation.navigate('ParentingTips')}
+      {/* <TouchableOpacity style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginTop:height*0.03,paddingVertical:height*0.02}}
+      onPress={()=>navigation.navigate('ParentingTipsStack')}
       >
         <Text style={{fontFamily:'Fredoka-Regular',color:BlackColor}}>Parenting Tips and Blogs</Text>
         <AntDesign name="right" size={width * 0.05} color={BlackColor} />
-      </TouchableOpacity>
-      <TouchableOpacity style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingVertical:height*0.02}}
+      </TouchableOpacity> */}
+      <TouchableOpacity style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingVertical:height*0.02,marginTop:height*0.03}}
       onPress={()=> 
         navigation.navigate('Helpdesk')
       }
