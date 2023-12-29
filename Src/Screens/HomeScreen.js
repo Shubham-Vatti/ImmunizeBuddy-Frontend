@@ -70,7 +70,6 @@ const HomeScreen = ({ navigation }) => {
               >
                 <View style={{ borderColor: LightBlack, borderWidth: 1, padding: width * 0.02, borderRadius: width * 0.02, width: width * 0.9 }}>
                   <Text style={{ fontFamily: 'Fredoka-SemiBold', fontSize: getFontSize(14) }}>{item.Vaccine_name}</Text>
-                  <Text style={{ fontFamily: 'Fredoka-Medium', fontSize: getFontSize(12) }}>{item.Vaccine_Details}</Text>
                   <View style={{ alignSelf: 'flex-end', marginTop: width * 0.01 }}>
                     <FlatList
                       data={item.Assigned_user}

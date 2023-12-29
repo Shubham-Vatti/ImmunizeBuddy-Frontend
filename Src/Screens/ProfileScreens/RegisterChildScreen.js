@@ -150,7 +150,7 @@ const RegisterChildScreen = ({ navigation }) => {
         {
           console.log(result)
           SetIsLoading(false)
-          navigation.navigate('DrawerNavigation')
+          navigation.navigate('BottomNavigator')
           // navigation.navigate('RegisterChildScreen')
         }
         else{
