@@ -16,6 +16,9 @@ https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/f2c9cae
 ### Nearest Doctor Screen
 <img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/ad2eda6b-9a3a-405c-8dde-adb7fc53f838" width="350" > <img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/71a4f12d-eb58-4159-891d-f5547038ec8e" width="350" > 
 
+### Vaccine Details Screen
+<img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/bc196c28-a167-49ef-9f62-b71352dbea9c" width="350" > <img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/123525f0-6726-4c7c-bf55-a3a3aa734286" width="350" >
+
 
 
 ### For Android
