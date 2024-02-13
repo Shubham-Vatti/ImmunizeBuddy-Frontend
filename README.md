@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Immunize Buddy (New Born Baby Vaccine Tracker)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Introducing the Newborn Vaccine Tracker, a comprehensive tool designed to support parents in safeguarding their child's health journey. This innovative app offers a user-friendly interface, providing access to personalized vaccine schedules, reminders for upcoming immunizations, and integration with nearby pediatricians for quick consultations. Additionally, it offers detailed descriptions of each vaccine, empowering parents with essential knowledge. Moreover, the app serves as a valuable resource hub, offering expert parenting tips and guidance to navigate the early stages of child development. With its convenience and wealth of information, the Newborn Vaccine Tracker is an indispensable companion for every parent.
 
 ## Step 1: Start the Metro Server
 
