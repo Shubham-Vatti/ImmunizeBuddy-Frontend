@@ -8,8 +8,7 @@ Introducing the Newborn Vaccine Tracker, a comprehensive tool designed to suppor
 https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/f2c9caec-4d5e-4207-a807-aa9f7fe372b8
 
 ### Login Screen
-<img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/1ba2f97c-606f-4450-9f15-a13918f2f953" width="100" height="100">
-![Login Screen](https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/1ba2f97c-606f-4450-9f15-a13918f2f953)
+<img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/1ba2f97c-606f-4450-9f15-a13918f2f953" width="500" >
 
 ### For Android
 
