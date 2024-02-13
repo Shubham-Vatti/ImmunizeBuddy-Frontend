@@ -10,6 +10,10 @@ https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/f2c9cae
 ### Login Screen
 <img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/1ba2f97c-606f-4450-9f15-a13918f2f953" width="350" >
 
+### Home Screen
+<img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/7e9ecdbe-da34-488b-986f-df807a81d491" width="350" >
+
+
 ### For Android
 
 ```bash
