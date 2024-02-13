@@ -13,6 +13,10 @@ https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/f2c9cae
 ### Home Screen
 <img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/7e9ecdbe-da34-488b-986f-df807a81d491" width="350" > <img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/40ec2cf8-8471-4ae1-ba2d-8a79642126c7" width="350" >
 
+### Nearest Doctor Screen
+<img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/ad2eda6b-9a3a-405c-8dde-adb7fc53f838" width="350" > <img src="https://github.com/Shubham-Vatti/ImmunizeBuddy-Frontend/assets/111516589/71a4f12d-eb58-4159-891d-f5547038ec8e" width="350" > 
+
+
 
 ### For Android
 
